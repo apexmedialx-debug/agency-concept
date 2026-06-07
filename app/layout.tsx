@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Unbounded } from "next/font/google";
 import "./globals.css";
 import Cursor from "@/components/Cursor";
+import ScrollProgress from "@/components/ScrollProgress";
 
 const unbounded = Unbounded({
   variable: "--font-unbounded",
@@ -21,6 +22,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={unbounded.variable}>
       <body>
+        <ScrollProgress />
         <Cursor />
         {children}
       </body>

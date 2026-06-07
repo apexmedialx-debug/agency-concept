@@ -173,14 +173,14 @@ export default function Team() {
           </motion.p>
         </div>
 
-        {/* Asymmetric grid: 2 + 3 */}
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '2rem' }} className="md:grid-cols-[1.2fr_1fr_1fr]">
-          {/* First two larger */}
+        {/* Row 1: 2 members — single col mobile, 2 cols sm+ */}
+        <div className="grid grid-cols-1 sm:grid-cols-2" style={{ gap: '2rem' }}>
           {MEMBERS.slice(0, 2).map((m, i) => (
             <MemberCard key={m.name} member={m} delay={i * 0.08} />
           ))}
         </div>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '2rem', marginTop: '2rem' }}>
+        {/* Row 2: 3 members — single col mobile, 2 cols sm, 3 cols md+ */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3" style={{ gap: '2rem', marginTop: '2rem' }}>
           {MEMBERS.slice(2).map((m, i) => (
             <MemberCard key={m.name} member={m} delay={0.2 + i * 0.08} />
           ))}
